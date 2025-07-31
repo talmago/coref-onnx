@@ -1,0 +1,133 @@
+[project]
+name = "spacy-coref"
+version = "0.1.0"
+description = "Lightweight cross-lingual coreference resolution with spaCy using ONNX Runtime inference of transformer models."
+authors = [
+  { name = "Tal Almagor", email = "almagoric@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+
+keywords = [
+  "coreference",
+  "coreference resolution",
+  "onnx",
+  "onnxruntime",
+  "spacy",
+  "nlp",
+  "natural language processing",
+  "transformers",
+  "crosslingual",
+  "multilingual",
+  "huggingface"
+]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Text Processing :: Linguistic"
+]
+
+dependencies = [
+    "spacy (>=3.8.7,<4.0.0)",
+    "huggingface-hub (>=0.34.3,<0.35.0)",
+    "onnxruntime (>=1.22.1,<2.0.0)",
+    "tokenizers (>=0.21.4,<0.22.0)"
+]
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+ruff = "^0.11.4"
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{ include = "spacy_coref", from = "src" }]
+
+[tool.poetry.plugins."spacy_factories"]
+coref_minilm = "spacy_coref:create_coref_minilm_component"
+
+[tool.black]
+line-length = 91
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = "VERTICAL_HANGING_INDENT"
+force_grid_wrap = 2
+line_length = 119
+skip = ["static", "notebooks", ".venv"]
+
+[tool.ruff]
+line-length = 88
+output-format = "grouped"
+target-version = "py39"
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "notebooks"
+]
+
+[tool.ruff.lint]
+select = [
+    # bugbear rules
+    "B",
+    # remove unused imports
+    "F401",
+    # bare except statements
+    "E722",
+    # unused arguments
+    "ARG"
+]
+ignore = [
+    # mutable defaults
+    "B006",
+    "B018",
+]
