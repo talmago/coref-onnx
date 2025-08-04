@@ -43,8 +43,7 @@ Usage with spaCy
 
 ```python
 import spacy
-
-from spacy_coref import create_coref_minilm_component
+import spacy_coref
 
 nlp = spacy.load("en_core_web_sm")
 nlp.add_pipe("coref_minilm")
