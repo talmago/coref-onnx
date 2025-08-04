@@ -79,3 +79,15 @@ Code formatting
 ```sh
 $ make format
 ```
+
+### 📚 References
+
+This project builds on the work of the following repositories:
+
+- **[crosslingual-coreference](https://github.com/davidberenstein1957/crosslingual-coreference)**  
+  David Berenstein's implementation of multilingual coreference resolution, adapted from the original AllenNLP coref model.  
+  GitHub: [davidberenstein1957/crosslingual-coreference](https://github.com/davidberenstein1957/crosslingual-coreference)
+
+- **[AllenNLP coreference model](https://github.com/allenai/allennlp-models/tree/b1f372248c17ad12684d344955fbcd98e957e77e/allennlp_models/coref)**  
+  Official AllenNLP implementation of coreference resolution.  
+  GitHub: [allenai/allennlp-models](https://github.com/allenai/allennlp-models)

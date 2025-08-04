@@ -1,6 +1,6 @@
 [project]
 name = "spacy-coref"
-version = "0.1.0"
+version = "0.1.1"
 description = "Lightweight cross-lingual coreference resolution with spaCy using ONNX Runtime inference of transformer models."
 authors = [
   { name = "Tal Almagor", email = "almagoric@gmail.com" }

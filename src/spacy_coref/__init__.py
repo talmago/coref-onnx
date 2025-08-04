@@ -1,12 +1,10 @@
 """
-coref_onnx
-~~~~~~~~~~
+# spacy-coref
 
-Lightweight crosslingual coreference resolution using ONNX Runtime
-and distilled transformer models.
+# Lightweight crosslingual coreference resolution with spaCy using ONNX Runtime inference of transformer models.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__ = "Tal Almagor"
 __license__ = "MIT"
 __email__ = "almagoric@gmail.com"
